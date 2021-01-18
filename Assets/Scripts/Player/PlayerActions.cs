@@ -11,7 +11,7 @@ public class PlayerActions
 
     public void Move(Transform transform)
     {
-        _player.Components.Rigidbody.velocity = Vector2.right;
+        _player.Components.Rigidbody.velocity = new Vector2(_player.Stats.Direction.x * _player.Stats.Speed * Time.deltaTime, _player.Stats.Direction.y);
         // transform.position
     }
 }
