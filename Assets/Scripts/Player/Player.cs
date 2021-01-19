@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
 
     public PlayerComponents Components => _components;
     public PlayerStats Stats => _stats;
+    public PlayerActions Actions => _actions;
 
     private void Start()
     {

@@ -9,7 +9,7 @@ public class PlayerUtilities
     public PlayerUtilities(Player player)
     {
         _player = player;
-        _commands.Add(new JumpCommand(KeyCode.Space));
+        _commands.Add(new JumpCommand(_player, KeyCode.Space));
     }
 
     public void HandleInput()
