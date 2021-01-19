@@ -34,4 +34,17 @@ public class PlayerUtilities
             }
         }
     }
+
+    public bool IsGrounded()
+    {
+        var hit = Physics2D.BoxCast(
+            _player.Components.Collider.bounds.center,
+            _player.Components.Collider.bounds.size,
+            0, Vector2.down,
+            0.1f,
+            _player.Components.GroundLayer
+        );
+
+        return hit.collider != null;
+    }
 }

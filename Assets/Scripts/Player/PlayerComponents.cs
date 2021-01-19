@@ -4,11 +4,15 @@ using UnityEngine;
 public class PlayerComponents
 {
     [SerializeField]
-    private Rigidbody2D _rigidbody;
+    private Rigidbody2D rigidbody;
     [SerializeField]
-    private AnyStateAnimator _animator;
-
-    public Rigidbody2D Rigidbody => _rigidbody;
-
-    public AnyStateAnimator Animator => _animator;
+    private AnyStateAnimator animator;
+    [SerializeField]
+    private Collider2D collider;
+    [SerializeField]
+    private LayerMask groundLayer;
+    public Rigidbody2D Rigidbody => rigidbody;
+    public AnyStateAnimator Animator => animator;
+    public Collider2D Collider => collider;
+    public LayerMask GroundLayer => groundLayer;
 }
