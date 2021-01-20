@@ -30,6 +30,8 @@ public class PlayerActions
         if (_player.Utilities.IsGrounded())
         {
             _player.Components.Rigidbody.AddForce(new Vector2(0, _player.Stats.JumpForce), ForceMode2D.Impulse);
+            _player.Components.Animator.TryPlayAnimation("Body_Jump");
+            _player.Components.Animator.TryPlayAnimation("Legs_Jump");
         }
     }
 }
