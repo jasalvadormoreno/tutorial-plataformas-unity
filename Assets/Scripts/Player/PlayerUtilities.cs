@@ -47,4 +47,18 @@ public class PlayerUtilities
 
         return hit.collider != null;
     }
+
+    public void HandleAir()
+    {
+        if (IsFalling())
+        {
+            _player.Components.Animator.TryPlayAnimation("Body_Fall");
+            _player.Components.Animator.TryPlayAnimation("Legs_Fall");
+        }
+    }
+
+    private bool IsFalling()
+    {
+        return _player.Components.Rigidbody.velocity.y < 0;
+    }
 }

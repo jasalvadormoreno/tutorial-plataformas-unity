@@ -28,10 +28,12 @@ public class Player : MonoBehaviour
             new AnyStateAnimation(RIG.BODY, "Body_Idle"),
             new AnyStateAnimation(RIG.BODY, "Body_Walk"),
             new AnyStateAnimation(RIG.BODY, "Body_Jump"),
+            new AnyStateAnimation(RIG.BODY, "Body_Fall"),
             
             new AnyStateAnimation(RIG.LEGS, "Legs_Idle"),
             new AnyStateAnimation(RIG.LEGS, "Legs_Walk"),
             new AnyStateAnimation(RIG.LEGS, "Legs_Jump"),
+            new AnyStateAnimation(RIG.LEGS, "Legs_Fall"),
         };
         
         _components.Animator.AddAnimations(animations);
@@ -40,6 +42,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         _utilities.HandleInput();
+        _utilities.HandleAir();
     }
 
     private void FixedUpdate()
