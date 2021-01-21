@@ -5,8 +5,10 @@ public class Player : MonoBehaviour
 {
     [SerializeField]
     private PlayerStats _stats;
+
     [SerializeField]
     private PlayerComponents _components;
+
     private PlayerReferences _references;
     private PlayerUtilities _utilities;
     private PlayerActions _actions;
@@ -25,17 +27,19 @@ public class Player : MonoBehaviour
 
         var animations = new[]
         {
-            new AnyStateAnimation(RIG.BODY, "Body_Idle"),
-            new AnyStateAnimation(RIG.BODY, "Body_Walk"),
+            new AnyStateAnimation(RIG.BODY, "Body_Idle", "Body_Attack"),
+            new AnyStateAnimation(RIG.BODY, "Body_Walk", "Body_Attack"),
             new AnyStateAnimation(RIG.BODY, "Body_Jump"),
             new AnyStateAnimation(RIG.BODY, "Body_Fall"),
-            
-            new AnyStateAnimation(RIG.LEGS, "Legs_Idle"),
+            new AnyStateAnimation(RIG.BODY, "Body_Attack"),
+
+            new AnyStateAnimation(RIG.LEGS, "Legs_Idle", "Legs_Attack"),
             new AnyStateAnimation(RIG.LEGS, "Legs_Walk"),
             new AnyStateAnimation(RIG.LEGS, "Legs_Jump"),
             new AnyStateAnimation(RIG.LEGS, "Legs_Fall"),
+            new AnyStateAnimation(RIG.LEGS, "Legs_Attack"),
         };
-        
+
         _components.Animator.AddAnimations(animations);
     }
 

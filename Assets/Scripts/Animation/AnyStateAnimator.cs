@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class AnyStateAnimator : MonoBehaviour
@@ -41,14 +42,18 @@ public class AnyStateAnimator : MonoBehaviour
                 _animations[newAnimation].Active = true;
                 currentAnimation = newAnimation;
             }
-            else if (currentAnimation != newAnimation)
+            else if (
+                currentAnimation != newAnimation
+                && !_animations[newAnimation].HigherPriority.Contains(currentAnimation)
+                || !_animations[currentAnimation].Active
+            )
             {
                 _animations[currentAnimation].Active = false;
                 _animations[newAnimation].Active = true;
                 currentAnimation = newAnimation;
             }
         }
-        
+
         Animate();
     }
 

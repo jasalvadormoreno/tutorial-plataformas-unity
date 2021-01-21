@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerActions
 {
-    private Player _player;
+    private readonly Player _player;
 
     public PlayerActions(Player player)
     {
@@ -33,5 +33,11 @@ public class PlayerActions
             _player.Components.Animator.TryPlayAnimation("Body_Jump");
             _player.Components.Animator.TryPlayAnimation("Legs_Jump");
         }
+    }
+
+    public void Attack()
+    {
+        _player.Components.Animator.TryPlayAnimation("Body_Attack");
+        _player.Components.Animator.TryPlayAnimation("Legs_Attack");
     }
 }

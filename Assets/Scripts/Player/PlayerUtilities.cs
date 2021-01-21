@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using CommandPattern;
 using UnityEngine;
 
 public class PlayerUtilities
@@ -10,6 +11,7 @@ public class PlayerUtilities
     {
         _player = player;
         _commands.Add(new JumpCommand(_player, KeyCode.Space));
+        _commands.Add(new AttackCommand(_player, KeyCode.LeftControl));
     }
 
     public void HandleInput()
