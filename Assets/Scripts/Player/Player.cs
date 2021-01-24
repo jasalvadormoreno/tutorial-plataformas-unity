@@ -5,18 +5,18 @@ public class Player : MonoBehaviour
 {
     [SerializeField]
     private PlayerStats _stats;
-
+    public PlayerStats Stats => _stats;
     [SerializeField]
     private PlayerComponents _components;
-
-    private PlayerReferences _references;
-    private PlayerUtilities _utilities;
-    private PlayerActions _actions;
-
     public PlayerComponents Components => _components;
-    public PlayerStats Stats => _stats;
-    public PlayerActions Actions => _actions;
+    [SerializeField]
+    private PlayerReferences _references;
+    public PlayerReferences References => _references;
+    private PlayerUtilities _utilities;
     public PlayerUtilities Utilities => _utilities;
+    private PlayerActions _actions;
+    public PlayerActions Actions => _actions;
+
 
     private void Start()
     {

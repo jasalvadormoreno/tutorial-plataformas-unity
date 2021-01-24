@@ -13,4 +13,11 @@ public class PlayerStats
     [SerializeField]
     private float jumpForce;
     public float JumpForce => jumpForce;
+    [SerializeField]
+    private Weapon weapon;
+    public Weapon Weapon
+    {
+        get => weapon;
+        set => weapon = value;
+    }
 }

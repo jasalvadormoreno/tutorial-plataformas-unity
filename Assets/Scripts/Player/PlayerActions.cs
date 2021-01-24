@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerActions
@@ -39,5 +41,20 @@ public class PlayerActions
     {
         _player.Components.Animator.TryPlayAnimation("Body_Attack");
         _player.Components.Animator.TryPlayAnimation("Legs_Attack");
+    }
+
+    public void TrySwapWeapon(Weapon weapon)
+    {
+        _player.Stats.Weapon = weapon;
+        SwapWeapon();
+    }
+
+    public void SwapWeapon()
+    {
+        foreach (var weaponObject in _player.References.WeaponObjects.Skip(1))
+            weaponObject.SetActive(false);
+
+        if (_player.Stats.Weapon > 0)
+            _player.References.WeaponObjects[(int) _player.Stats.Weapon].SetActive(true);
     }
 }
