@@ -15,6 +15,11 @@ public class AnyStateAnimator : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
+    private void Update()
+    {
+        Animate();
+    }
+
     public void AddAnimations(params AnyStateAnimation[] animations)
     {
         foreach (var animationRig in animations)
@@ -53,8 +58,6 @@ public class AnyStateAnimator : MonoBehaviour
                 currentAnimation = newAnimation;
             }
         }
-
-        Animate();
     }
 
     private void Animate()
@@ -63,5 +66,10 @@ public class AnyStateAnimator : MonoBehaviour
         {
             _animator.SetBool(key, _animations[key].Active);
         }
+    }
+
+    public void OnAnimationDone(string animation)
+    {
+        _animations[animation].Active = false;
     }
 }
