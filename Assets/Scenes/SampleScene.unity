@@ -589,7 +589,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 41c7fd1da78d3452bbfeb7b6d621614a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a1d231ab95657c643acb4f2ecba9dacc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -607,13 +607,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 611832924}
-  m_LocalRotation: {x: -0, y: -0, z: 0.21107492, w: 0.97747}
-  m_LocalPosition: {x: 0.343447, y: 0.22172594, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.1539984, w: 0.98807114}
+  m_LocalPosition: {x: -0.334, y: 0.621, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 452029665}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 17.717}
 --- !u!1 &799919580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,13 +1307,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695773618}
-  m_LocalRotation: {x: -0, y: -0, z: 0.21107492, w: 0.97747}
-  m_LocalPosition: {x: -0.32515067, y: 0.7597801, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.32375982, w: 0.9461394}
+  m_LocalPosition: {x: -0.534, y: 0.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 452029665}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 37.781}
 --- !u!212 &1695773620
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1354,7 +1354,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: c46c277936d6f4c78ac994588c1b66dc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 46333ed3254746547b1954040a24ce23, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1587,8 +1587,8 @@ MonoBehaviour:
   - {fileID: 254568152}
   - {fileID: 1146035720}
   m_Bounds:
-    m_Center: {x: 5.4927654, y: -0.32824206, z: 0}
-    m_Extent: {x: 0.85371184, y: 1.4053941, z: 0}
+    m_Center: {x: 5.4927664, y: -0.3282423, z: 0}
+    m_Extent: {x: 0.85371256, y: 1.4053932, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!212 &1996097211
