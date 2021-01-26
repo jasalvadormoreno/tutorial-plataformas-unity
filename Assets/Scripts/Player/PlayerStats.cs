@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
@@ -20,4 +21,6 @@ public class PlayerStats
         get => weapon;
         set => weapon = value;
     }
+
+    public Dictionary<Weapon, bool> Weapons { get; set; } = new Dictionary<Weapon, bool>();
 }

@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using UnityEngine;
 
@@ -45,6 +44,8 @@ public class PlayerActions
 
     public void TrySwapWeapon(Weapon weapon)
     {
+        if (!_player.Stats.Weapons[weapon]) return;
+
         _player.Stats.Weapon = weapon;
         _player.Components.Animator.SetWeapon((int) _player.Stats.Weapon);
         SwapWeapon();
@@ -57,5 +58,18 @@ public class PlayerActions
 
         if (_player.Stats.Weapon > 0)
             _player.References.WeaponObjects[(int) _player.Stats.Weapon].SetActive(true);
+    }
+
+    public void Collide(Collider2D collision)
+    {
+        if (collision.CompareTag("Collectable"))
+        {
+            collision.GetComponent<ICollectable>().Collect();
+        }
+    }
+
+    public void PickUpWeapon(Weapon weapon)
+    {
+        _player.Stats.Weapons[weapon] = true;
     }
 }

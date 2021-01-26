@@ -39,6 +39,10 @@ public class Player : MonoBehaviour
             new AnyStateAnimation(RIG.LEGS, "Legs_Fall"),
             new AnyStateAnimation(RIG.LEGS, "Legs_Attack"),
         };
+        
+        _stats.Weapons.Add(Weapon.Fists, true);
+        _stats.Weapons.Add(Weapon.Sword, false);
+        _stats.Weapons.Add(Weapon.Gun, false);
 
         _components.Animator.AddAnimations(animations);
     }
@@ -52,5 +56,10 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         _actions.Move(transform);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        _actions.Collide(collision);
     }
 }
