@@ -21,6 +21,13 @@ public class PlayerStats
         get => weapon;
         set => weapon = value;
     }
+    [SerializeField]
+    private int lives;
+    public int Lives
+    {
+        get => lives;
+        set => lives = value;
+    }
 
     public Dictionary<Weapon, bool> Weapons { get; set; } = new Dictionary<Weapon, bool>();
 }

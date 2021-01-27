@@ -44,6 +44,8 @@ public class Player : MonoBehaviour
         _stats.Weapons.Add(Weapon.Sword, false);
         _stats.Weapons.Add(Weapon.Gun, false);
 
+        UIManager.Instance.AddLife(_stats.Lives);
+        
         _components.Animator.AddAnimations(animations);
     }
 

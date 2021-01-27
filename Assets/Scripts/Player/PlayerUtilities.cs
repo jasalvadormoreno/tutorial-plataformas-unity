@@ -38,6 +38,12 @@ public class PlayerUtilities
                 command.GetKey();
             }
         }
+
+        // TODO: Remove this
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            UIManager.Instance.RemoveLife();
+        }
     }
 
     public bool IsGrounded()
