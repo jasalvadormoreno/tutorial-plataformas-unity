@@ -69,6 +69,11 @@ public class PlayerActions
             go.GetComponent<Projectile>().Setup(direction);
         }
     }
+
+    public void TakeHit()
+    {
+        UIManager.Instance.RemoveLife();
+    }
     
     public void Collide(Collider2D collision)
     {
