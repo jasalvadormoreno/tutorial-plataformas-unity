@@ -1240,6 +1240,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 406591732}
+  - {fileID: 1316908837}
   m_Father: {fileID: 452029665}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 17.717}
@@ -1695,7 +1696,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204568437}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1313.3784, y: 850.8406, z: -188.26468}
+  m_LocalPosition: {x: 1308.75, y: 850.8406, z: -188.26468}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 58575630}
@@ -1768,6 +1769,36 @@ Transform:
   m_Father: {fileID: 356273667}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1316908836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1316908837}
+  m_Layer: 0
+  m_Name: Barrel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1316908837
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316908836}
+  m_LocalRotation: {x: -0, y: -0, z: -0.0049004243, w: 0.9999881}
+  m_LocalPosition: {x: 0.8916, y: -0.5288, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 611832926}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.562}
 --- !u!1 &1401533478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1786,7 +1817,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1401533479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2839,7 +2870,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1773161966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3066,6 +3097,8 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 1695773618}
     - {fileID: 611832924}
+    _gunBarrel: {fileID: 1316908837}
+    _projectilePrefab: {fileID: 8342389463850206891, guid: ccd227a47cf4449d1b9d1fe3842e9f64, type: 3}
 --- !u!50 &1864792131
 Rigidbody2D:
   serializedVersion: 4

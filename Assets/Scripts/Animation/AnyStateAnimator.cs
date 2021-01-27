@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+public delegate void AnimationTriggerEvent(string animation);
+
 public class AnyStateAnimator : MonoBehaviour
 {
     private Animator _animator;
     private Dictionary<string, AnyStateAnimation> _animations = new Dictionary<string, AnyStateAnimation>();
     private string _currentAnimationLegs = string.Empty;
     private string _currentAnimationBody = string.Empty;
+    public AnimationTriggerEvent AnimationTriggerEvent { get; set; }
 
     private void Awake()
     {
@@ -76,5 +79,10 @@ public class AnyStateAnimator : MonoBehaviour
     public void OnAnimationDone(string animation)
     {
         _animations[animation].Active = false;
+    }
+
+    public void OnAnimationTrigger(string animation)
+    {
+        AnimationTriggerEvent?.Invoke(animation);
     }
 }

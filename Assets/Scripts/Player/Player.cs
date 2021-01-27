@@ -39,6 +39,8 @@ public class Player : MonoBehaviour
             new AnyStateAnimation(RIG.LEGS, "Legs_Fall"),
             new AnyStateAnimation(RIG.LEGS, "Legs_Attack"),
         };
+
+        Components.Animator.AnimationTriggerEvent += Actions.Shoot;
         
         _stats.Weapons.Add(Weapon.Fists, true);
         _stats.Weapons.Add(Weapon.Sword, false);

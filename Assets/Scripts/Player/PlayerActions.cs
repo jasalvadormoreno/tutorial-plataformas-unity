@@ -60,6 +60,16 @@ public class PlayerActions
             _player.References.WeaponObjects[(int) _player.Stats.Weapon].SetActive(true);
     }
 
+    public void Shoot(string animation)
+    {
+        if (animation == "Shoot")
+        {
+            var go = GameObject.Instantiate(_player.References.ProjectilePrefab, _player.References.GunBarrel.position, Quaternion.identity);
+            var direction = new Vector3(_player.transform.localScale.x, 0);
+            go.GetComponent<Projectile>().Setup(direction);
+        }
+    }
+    
     public void Collide(Collider2D collision)
     {
         if (collision.CompareTag("Collectable"))
