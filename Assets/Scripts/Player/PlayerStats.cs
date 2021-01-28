@@ -14,6 +14,7 @@ public class PlayerStats
     [SerializeField]
     private float jumpForce;
     public float JumpForce => jumpForce;
+    public bool Alive => lives > 0;
     [SerializeField]
     private Weapon weapon;
     public Weapon Weapon

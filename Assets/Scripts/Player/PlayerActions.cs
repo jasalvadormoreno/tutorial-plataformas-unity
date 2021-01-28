@@ -72,9 +72,20 @@ public class PlayerActions
 
     public void TakeHit()
     {
-        UIManager.Instance.RemoveLife();
+        if (_player.Stats.Lives > 0)
+        {
+            UIManager.Instance.RemoveLife();
+            _player.Stats.Lives--;
+            _player.Components.Animator.TryPlayAnimation("Body_Hurt");
+        }
+
+        if (!_player.Stats.Alive)
+        {
+            _player.Components.Animator.TryPlayAnimation("Body_Die");
+            _player.Components.Animator.TryPlayAnimation("Legs_Die");
+        }
     }
-    
+
     public void Collide(Collider2D collision)
     {
         if (collision.CompareTag("Collectable"))
