@@ -11,7 +11,7 @@ public class PlayerUtilities
     {
         _player = player;
         _commands.Add(new JumpCommand(_player, KeyCode.Space));
-        _commands.Add(new AttackCommand(_player, KeyCode.LeftControl));
+        _commands.Add(new AttackCommand(_player, KeyCode.LeftShift));
         _commands.Add(new WeaponSwapCommand(_player, Weapon.Fists, KeyCode.Alpha1));
         _commands.Add(new WeaponSwapCommand(_player, Weapon.Sword, KeyCode.Alpha2));
         _commands.Add(new WeaponSwapCommand(_player, Weapon.Gun, KeyCode.Alpha3));
@@ -20,6 +20,7 @@ public class PlayerUtilities
     public void HandleInput()
     {
         _player.Stats.Direction = new Vector2(Input.GetAxisRaw("Horizontal"), _player.Components.Rigidbody.velocity.y);
+        Debug.Log(Input.GetAxisRaw("Horizontal"));
 
         foreach (var command in _commands)
         {

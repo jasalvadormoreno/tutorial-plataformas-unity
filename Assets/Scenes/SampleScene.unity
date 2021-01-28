@@ -290,6 +290,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a240289409bf04f9589beb32fe124a32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &61600223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 61600224}
+  m_Layer: 0
+  m_Name: Barrel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &61600224
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61600223}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0014204233, w: 0.99999905}
+  m_LocalPosition: {x: 0.8917, y: -0.5304, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 611832926}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.163}
 --- !u!1 &115364627
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,6 +1387,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 406591732}
+  - {fileID: 61600224}
   m_Father: {fileID: 452029665}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 17.717}
@@ -3280,7 +3311,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 64db69c74edbe4eb8bbb4b8fa5e2702a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3362,8 +3393,8 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 1695773618}
     - {fileID: 611832924}
-    _gunBarrel: {fileID: 0}
-    _projectilePrefab: {fileID: 0}
+    _gunBarrel: {fileID: 61600224}
+    _projectilePrefab: {fileID: 8342389463850206891, guid: ccd227a47cf4449d1b9d1fe3842e9f64, type: 3}
 --- !u!50 &1864792131
 Rigidbody2D:
   serializedVersion: 4
