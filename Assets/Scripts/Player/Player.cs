@@ -30,6 +30,8 @@ public class Player : MonoBehaviour
 
         _stats.Speed = _stats.WalkSpeed;
 
+        _stats.IsImmortal = false;
+        
         var animations = new[]
         {
             new AnyStateAnimation(RIG.BODY, "Body_Idle", "Body_Attack", "Body_Hurt"),

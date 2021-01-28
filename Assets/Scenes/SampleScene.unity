@@ -3343,6 +3343,7 @@ MonoBehaviour:
     walkSpeed: 100
     runSpeed: 0
     jumpForce: 5
+    immortalityTime: 3
     weapon: 0
     lives: 3
   _components:
@@ -3352,6 +3353,10 @@ MonoBehaviour:
     groundLayer:
       serializedVersion: 2
       m_Bits: 64
+    spriteRenderers:
+    - {fileID: 1996097211}
+    - {fileID: 1695773620}
+    - {fileID: 611832925}
   _references:
     _weaponObjects:
     - {fileID: 0}

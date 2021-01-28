@@ -14,6 +14,13 @@ public class PlayerStats
     [SerializeField]
     private float jumpForce;
     public float JumpForce => jumpForce;
+    [SerializeField]
+    private float immortalityTime;
+    public float ImmortalityTime
+    {
+        get => immortalityTime;
+        set => immortalityTime = value;
+    }
     public bool Alive => lives > 0;
     [SerializeField]
     private Weapon weapon;
@@ -31,4 +38,5 @@ public class PlayerStats
     }
 
     public Dictionary<Weapon, bool> Weapons { get; set; } = new Dictionary<Weapon, bool>();
+    public bool IsImmortal { get; set; }
 }

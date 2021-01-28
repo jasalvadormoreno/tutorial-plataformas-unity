@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 
@@ -72,6 +73,8 @@ public class PlayerActions
 
     public void TakeHit()
     {
+        if (_player.Stats.IsImmortal) return;
+
         if (_player.Stats.Lives > 0)
         {
             UIManager.Instance.RemoveLife();
@@ -79,11 +82,44 @@ public class PlayerActions
             _player.Components.Animator.TryPlayAnimation("Body_Hurt");
         }
 
+        if (_player.Stats.Alive)
+        {
+            _player.StartCoroutine(Immortality());
+        }
+
         if (!_player.Stats.Alive)
         {
             _player.Components.Animator.TryPlayAnimation("Body_Die");
             _player.Components.Animator.TryPlayAnimation("Legs_Die");
         }
+    }
+
+    private IEnumerator Blink()
+    {
+        while (_player.Stats.IsImmortal)
+        {
+            foreach (var spriteRenderer in _player.Components.SpriteRenderers)
+            {
+                spriteRenderer.enabled = false;
+            }
+
+            yield return new WaitForSeconds(.15f);
+
+            foreach (var spriteRenderer in _player.Components.SpriteRenderers)
+            {
+                spriteRenderer.enabled = true;
+            }
+
+            yield return new WaitForSeconds(.15f);
+        }
+    }
+
+    private IEnumerator Immortality()
+    {
+        _player.Stats.IsImmortal = true;
+        _player.StartCoroutine(Blink());
+        yield return new WaitForSeconds(_player.Stats.ImmortalityTime);
+        _player.Stats.IsImmortal = false;
     }
 
     public void Collide(Collider2D collision)
